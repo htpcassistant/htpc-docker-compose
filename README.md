@@ -1,17 +1,19 @@
-# Ä£°åÊ¹ÓÃËµÃ÷
+# æ¨¡æ¿ä½¿ç”¨è¯´æ˜
 ----
 
-±¾²Ö¿âÖ¼ÔÚÓÅ»¯docker²¿Êğ¹ı³Ì£¬¼õÉÙ·şÎñÅäÖÃ¡£
+æœ¬ä»“åº“æ—¨åœ¨ä¼˜åŒ–dockeréƒ¨ç½²è¿‡ç¨‹ï¼Œå‡å°‘æœåŠ¡é…ç½®ã€‚
 
-
-## Ê¹ÓÃ·½·¨
+## ä½¿ç”¨æ–¹æ³•
 `docker-compose -f xxx.yml up -d`
 
 
-## ·şÎñÁĞ±í
+## æœåŠ¡åˆ—è¡¨
 - mariadb
 - nextcloud
 - jellyfin
 - aria2
 - qBittorrent
 - chronos
+
+## unRAID ä½¿ç”¨æ–¹æ³•
+![image](http://img.openapi.store/unraid.gif)
