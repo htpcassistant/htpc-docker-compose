@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  mysql-db:
+    container_name: mariadb
+    image: mariadb:10
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    restart: unless-stopped
+    #restart: always
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: dev
+      MYSQL_USER: dev
+      MYSQL_PASSWORD:
+
+volumes:
+  mariadb-data:

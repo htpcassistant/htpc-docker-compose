@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  jellyfin:
+    container_name: jellyfin
+    image: jellyfin/jellyfin:latest
+    restart: unless-stopped
+    networks:
+      - media
+    ports:
+      - "8096:8096/tcp"
+      - "8920:8920/tcp"
+      - "1900:1900/udp"
+      - "7359:7359/udp"
+    volumes:
+      - ./conf:/config
+      - /mnt/storage/storage:/media/storage:ro
+
+networks:
+  media:

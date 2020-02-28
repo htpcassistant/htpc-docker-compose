@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  aria2:
+    container_name: aria2
+    image: john123951/aria2-with-webui:latest
+    restart: unless-stopped
+    ports:
+      - 8000:80
+      - 6800:6800
+    environment:
+      SECRET: 123456
+    volumes:
+      - ./conf:/conf
+      - /mnt/storage/storage/downloads:/download:rw

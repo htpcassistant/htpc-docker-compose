@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  nextcloud:
+    container_name: nextcloud
+    image: nextcloud:18-apache
+    restart: unless-stopped
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: Asia/Hong_Kong
+      NEXTCLOUD_DATA_DIR: /storage/data
+      NEXTCLOUD_TRUSTED_DOMAINS: xxx.xxx.com
+    ports:
+      - 8080:80
+    volumes:
+      - ./nextcloud-conf:/var/www/html/config
+      #- ./nextcloud-apps:/var/www/html/custom_apps
+      #- ./nextcloud-theme:/var/www/html/themes
+      #- ./etc/passwd:/etc/passwd
+      - ./data:/storage/data
+      - /mnt/personal/homes/sweet:/storage/data/sweet/files
+    dns:
+      - 8.8.8.8
+
+volumes:
+  nextcloud-conf:
